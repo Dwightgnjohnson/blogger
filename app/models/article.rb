@@ -4,6 +4,9 @@ class Article < ActiveRecord::Base
   has_many :comments
   has_many :taggings
   has_many :tags, :through => :taggings
+  has_attached_file :image
+  attr_accessible :image
+  attr_accessible :title, :body, :tag_list, :image
 
 
   def tag_list
